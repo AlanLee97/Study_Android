@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ActivityConvertValues" />
+            <option value="$PROJECT_DIR$/ActivityLife" />
+            <option value="$PROJECT_DIR$/AsyncTackCancel" />
+            <option value="$PROJECT_DIR$/AutoCompeleteTextView" />
+            <option value="$PROJECT_DIR$/BaseAdapter" />
+            <option value="$PROJECT_DIR$/BaseAdapter2" />
+            <option value="$PROJECT_DIR$/CheckBox" />
+            <option value="$PROJECT_DIR$/DownloadImage" />
+            <option value="$PROJECT_DIR$/DownloadProgress" />
+            <option value="$PROJECT_DIR$/GridViewComponent" />
+            <option value="$PROJECT_DIR$/IntentAttribute" />
+            <option value="$PROJECT_DIR$/IntentFilter" />
+            <option value="$PROJECT_DIR$/LaunchMode" />
+            <option value="$PROJECT_DIR$/ListView" />
+            <option value="$PROJECT_DIR$/ListViewMethods" />
+            <option value="$PROJECT_DIR$/MyActivity" />
+            <option value="$PROJECT_DIR$/RadioButton" />
+            <option value="$PROJECT_DIR$/SimpleAdapter" />
+            <option value="$PROJECT_DIR$/Spinner" />
+            <option value="$PROJECT_DIR$/Task" />
+            <option value="$PROJECT_DIR$/ThreadBlock" />
+            <option value="$PROJECT_DIR$/Toast" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/imageview" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

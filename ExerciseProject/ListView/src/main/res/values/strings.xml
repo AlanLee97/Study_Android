@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ListView</string>
+    <string-array name="cities">
+        <item>北京</item>
+        <item>上海</item>
+        <item>广州</item>
+        <item>深圳</item>
+        <item>杭州</item>
+        <item>成都</item>
+    </string-array>
+</resources>

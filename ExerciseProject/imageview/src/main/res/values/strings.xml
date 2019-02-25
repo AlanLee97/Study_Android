@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ImageView</string>
+    <string name="btn_pre">上一张</string>
+    <string name="btn_next">下一张</string>
+</resources>

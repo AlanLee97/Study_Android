@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AutoCompeleteTextView</string>
+    <string-array name="words">
+        <item>aback</item>
+        <item>abase</item>
+        <item>abash</item>
+        <item>acute</item>
+        <item>android</item>
+    </string-array>
+</resources>

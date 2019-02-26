@@ -1,0 +1,1 @@
+include ':app', ':AsyncTaskLoader', ':FrameAnimation', ':TweenAnimation', ':StaticFragment', ':DynamicFragment', ':FragmentConvertValue', ':FragmentConvertValue2', ':ViewPager', ':FragmentViewPager', ':FragmentViewPagerNavigator'

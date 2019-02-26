@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2.14情人节</title>
+<meta name="description" content="Change OR Die" />
+<style type="text/css">
+body {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	font-size: 25px;
+	color: #FFF;
+	font-family: "微软雅黑";
+	
+}
+div {
+	text-align: left;
+}
+.tittle {
+	width: 100%;
+	font-size: 110%rem;
+	top: 0px;
+	height: 100%;
+	z-index: 0;
+	position: absolute;
+	position: fixed !important;
+	display: none;
+	cursor: default;
+}
+.big {
+	font-family: "微软雅黑";
+	color: #FFF;
+	font-size: 35px;
+}
+.tishi {
+	position: absolute;
+	position: fixed !important;
+	z-index: 99;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+.tishiContent {
+	border: 1px solid #FFF;
+	font-size: 18px;
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+	.click{
+		color: #ef6a8a;
+		font-size: 150%;
+	}
+</style>
+<script src="../js/hm.js"></script><script type="text/javascript" src="../js/jquery.min.js"></script><script>
+if(localStorage["index"]=="1"){window.location="#"}$(document).ready(function(e){$(document).scrollTop(300);timer=setInterval("$.change()",6000);t=1;$("#t-"+t).fadeIn();$(document).click(function(){clearInterval(timer);$.change()});$.change=function(){t++;if(t<=$(".tittle").length){$(".tittle").slideUp(1500).fadeOut();$("#t-"+t).slideDown(1500).fadeIn()}}});
+</script>
+<style type="text/css" abt="234"></style>
+<style type="text/css">
+.snow-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 100001;
+}
+</style>
+<script>//remove 17173 video ad
+doAdblock();
+function doAdblock(){
+    (function() {
+        function A() {}
+        A.prototype = {
+            rules: {
+                '17173_in':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFile(Customer)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_in_20150522.swf"
+                },
+                '17173_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFileFirstpage\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_out_20150522.swf"
+                },
+                '17173_live':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream(_firstpage)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_stream_20150522.swf"
+                },
+                '17173_live_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream_(custom)?Out\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173.out.Live.swf"
+                }
+            },
+            _done: null,
+            get done() {
+                if(!this._done) {
+                    this._done = new Array();
+                }
+                return this._done;
+            },
+            addAnimations: function() {
+                var style = document.createElement('style');
+                style.type = 'text/css';
+                style.innerHTML = 'object,embed{\
+                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                animation-duration:.001s;animation-name:playerInserted;}\
+                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+                document.getElementsByTagName('head')[0].appendChild(style);
+            },
+            animationsHandler: function(e) {
+                if(e.animationName === 'playerInserted') {
+                    this.replace(e.target);
+                }
+            },
+            replace: function(elem) {
+                if(this.done.indexOf(elem) != -1) return;
+                this.done.push(elem);
+                var player = elem.data || elem.src;
+                if(!player) return;
+                var i, find, replace = false;
+                for(i in this.rules) {
+                    find = this.rules[i]['find'];
+                    if(find.test(player)) {
+                        replace = this.rules[i]['replace'];
+                        if('function' === typeof this.rules[i]['preHandle']) {
+                            this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                        }else{
+                            this.reallyReplace.bind(this, elem, find, replace)();
+                        }
+                        break;
+                    }
+                }
+            },
+            reallyReplace: function(elem, find, replace) {
+                elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+                var b = elem.querySelector("param[name='movie']");
+                this.reloadPlugin(elem);
+            },
+            reloadPlugin: function(elem) {
+                var nextSibling = elem.nextSibling;
+                var parentNode = elem.parentNode;
+                parentNode.removeChild(elem);
+                var newElem = elem.cloneNode(true);
+                this.done.push(newElem);
+                if(nextSibling) {
+                    parentNode.insertBefore(newElem, nextSibling);
+                } else {
+                    parentNode.appendChild(newElem);
+                }
+            },
+            init: function() {
+                var handler = this.animationsHandler.bind(this);
+                document.body.addEventListener('webkitAnimationStart', handler, false);
+                document.body.addEventListener('msAnimationStart', handler, false);
+                document.body.addEventListener('oAnimationStart', handler, false);
+                document.body.addEventListener('animationstart', handler, false);
+                this.addAnimations();
+            }
+        };
+        new A().init();
+    })();
+}
+//remove baidu search ad
+if(document.URL.indexOf('www.baidu.com') >= 0){
+    if(document && document.getElementsByTagName && document.getElementById && document.body){
+        var aa = function(){
+            var all = document.body.querySelectorAll("#content_left div,#content_left table");
+            for(var i = 0; i < all.length; i++){
+                if(/display:\s?(table|block)\s!important/.test(all[i].getAttribute("style"))){all[i].style.display= "none";all[i].style.visibility='hidden';}
+            }
+            all = document.body.querySelectorAll('.result.c-container[id="1"]');
+            //if(all.length == 1) return;
+            for(var i = 0; i < all.length; i++){
+                if(all[i].innerHTML && all[i].innerHTML.indexOf('广告')>-1){
+                    all[i].style.display= "none";all[i].style.visibility='hidden';
+                }
+            }
+        }
+        aa();
+        document.getElementById('wrapper_wrapper').addEventListener('DOMSubtreeModified',aa)
+    };
+}
+//remove sohu video ad
+if (document.URL.indexOf("tv.sohu.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//remove 56.com video ad
+if (document.URL.indexOf("56.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//fore iqiyi enable html5 player function
+if (document.URL.indexOf("iqiyi.com") >= 0){
+    if (document.cookie.indexOf("player_forcedType=h5_VOD")==-1){
+        document.cookie='player_forcedType=h5_VOD'
+        if(localStorage.reloadTime && Date.now() - parseInt(localStorage.reloadTime)<60000){
+            console.log('no reload')
+        }else{
+            location.reload()
+            localStorage.reloadTime = Date.now();
+        }
+    }
+}
+</script>
+<style type="text/css">
+object, embed {
+	-webkit-animation-duration: .001s;
+	-webkit-animation-name: playerInserted;
+	-ms-animation-duration: .001s;
+	-ms-animation-name: playerInserted;
+	-o-animation-duration: .001s;
+	-o-animation-name: playerInserted;
+	animation-duration: .001s;
+	animation-name: playerInserted;
+}
+@-webkit-keyframes playerInserted {
+from {
+opacity:0.99;
+}
+to {
+opacity:1;
+}
+}
+@-ms-keyframes playerInserted {
+from {
+opacity:0.99;
+}
+to {
+opacity:1;
+}
+}
+@-o-keyframes playerInserted {
+from {
+opacity:0.99;
+}
+to {
+opacity:1;
+}
+}
+@keyframes playerInserted {
+from {
+opacity:0.99;
+}
+to {
+opacity:1;
+}
+}
+</style>
+<link type="text/css" rel="stylesheet" charset="utf-8" href="../css/xl_style.css">
+<link type="text/css" rel="stylesheet" charset="utf-8" href="../css/style.css">
+</head>
+
+<body>
+<audio id="main_audio" autoplay="autoplay" preload="auto" loop="">
+<source src="../audio/纸短情长.mp3" type="audio/mpeg">
+<embed id="main_audio_ie8" hidden="true" autostart="true" height="0" width="0" loop="true" src="" autoplay="autoplay">
+</audio>
+<div class="snow-container">
+  <canvas width="1280" height="561"></canvas>
+</div>
+<center>
+  <div class="tittle" id="t-1" style="display: none;">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">亲爱的 Margaret 小姐</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-2" style="display: none;">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">秋怡</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-3" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">今天2.14情人节</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-4" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">我们没能在一起过这个节日</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-5" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">我也不知道该送点什么东西给你</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-6" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">所以</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-7" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">我只做了这个东西</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-8" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">虽然</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-9" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">这是虚拟的东西</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-10" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">但是</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-11" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">我还是想表达</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-12" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">我对你的心意</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-13" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">亲爱的,能够遇见你，对我来说是最大的幸福</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-14" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">在以后的日子里，也许有很的多无法确定</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-15" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center">陪伴是最长情的告白。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tittle" id="t-16" style="">
+    <table width="100%" border="0" height="100%">
+      <tbody>
+        <tr>
+          <td align="center"><a class="click" href="../love/index.html">Darling, 点这里</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</center>
+<div align="center" class="tishi"> <span class="tishiContent">轻触屏幕继续</span> <br>
+  <span style="font-size: 10px;">AlanLee &amp; Margaret</span> <br>
+</div>
+
+<div style="display:none"><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3568997ab3a480640571c3fd2c7a949b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+</div>
+<div style="position: static; display: none; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;">
+  <div id="trans-tooltip">
+    <div id="tip-left-top" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-left-top.png&quot;);"></div>
+    <div id="tip-top" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-top.png&quot;) repeat-x;"></div>
+    <div id="tip-right-top" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-right-top.png&quot;);"></div>
+    <div id="tip-right" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-right.png&quot;) repeat-y;"></div>
+    <div id="tip-right-bottom" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-right-bottom.png&quot;);"></div>
+    <div id="tip-bottom" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-bottom.png&quot;) repeat-x;"></div>
+    <div id="tip-left-bottom" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-left-bottom.png&quot;);"></div>
+    <div id="tip-left" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-left.png&quot;);"></div>
+    <div id="trans-content"></div>
+  </div>
+  <div id="tip-arrow-bottom" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-arrow-bottom.png&quot;);"></div>
+  <div id="tip-arrow-top" style="background: url(&quot;chrome-extension://dodigcollhkcpflanilhcefbhbagajfm/imgs/map/tip-arrow-top.png&quot;);"></div>
+</div>
+<div id="showXLdiv" style="display: none;"></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+</style>
+
+  <canvas id="sakura"></canvas>
+<!-- sakura shader -->
+<script id="sakura_point_vsh" type="x-shader/x_vertex">
+uniform mat4 uProjection;
+uniform mat4 uModelview;
+uniform vec3 uResolution;
+uniform vec3 uOffset;
+uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
+uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
+
+attribute vec3 aPosition;
+attribute vec3 aEuler;
+attribute vec2 aMisc; //x:size, y:fade
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+//varying mat3 rotMat;
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+void main(void) {
+    // Projection is based on vertical angle
+    vec4 pos = uModelview * vec4(aPosition + uOffset, 1.0);
+    gl_Position = uProjection * pos;
+    gl_PointSize = aMisc.x * uProjection[1][1] / -pos.z * uResolution.y * 0.5;
+
+    pposition = pos.xyz;
+    psize = aMisc.x;
+    pdist = length(pos.xyz);
+    palpha = smoothstep(0.0, 1.0, (pdist - 0.1) / uFade.z);
+
+    vec3 elrsn = sin(aEuler);
+    vec3 elrcs = cos(aEuler);
+    mat3 rotx = mat3(
+        1.0, 0.0, 0.0,
+        0.0, elrcs.x, elrsn.x,
+        0.0, -elrsn.x, elrcs.x
+    );
+    mat3 roty = mat3(
+        elrcs.y, 0.0, -elrsn.y,
+        0.0, 1.0, 0.0,
+        elrsn.y, 0.0, elrcs.y
+    );
+    mat3 rotz = mat3(
+        elrcs.z, elrsn.z, 0.0, 
+        -elrsn.z, elrcs.z, 0.0,
+        0.0, 0.0, 1.0
+    );
+    mat3 rotmat = rotx * roty * rotz;
+    normal = rotmat[2];
+
+    mat3 trrotm = mat3(
+        rotmat[0][0], rotmat[1][0], rotmat[2][0],
+        rotmat[0][1], rotmat[1][1], rotmat[2][1],
+        rotmat[0][2], rotmat[1][2], rotmat[2][2]
+    );
+    normX = trrotm[0];
+    normY = trrotm[1];
+    normZ = trrotm[2];
+
+    const vec3 lit = vec3(0.6917144638660746, 0.6917144638660746, -0.20751433915982237);
+
+    float tmpdfs = dot(lit, normal);
+    if(tmpdfs < 0.0) {
+        normal = -normal;
+        tmpdfs = dot(lit, normal);
+    }
+    diffuse = 0.4 + tmpdfs;
+
+    vec3 eyev = normalize(-pos.xyz);
+    if(dot(eyev, normal) > 0.0) {
+        vec3 hv = normalize(eyev + lit);
+        specular = pow(max(dot(hv, normal), 0.0), 20.0);
+    }
+    else {
+        specular = 0.0;
+    }
+
+    rstop = clamp((abs(pdist - uDOF.x) - uDOF.y) / uDOF.z, 0.0, 1.0);
+    rstop = pow(rstop, 0.5);
+    //-0.69315 = ln(0.5)
+    distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
+}
+</script>
+<script id="sakura_point_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+
+uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
+uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
+
+const vec3 fadeCol = vec3(0.08, 0.03, 0.06);
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+//varying mat3 rotMat;
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+float ellipse(vec2 p, vec2 o, vec2 r) {
+    vec2 lp = (p - o) / r;
+    return length(lp) - 1.0;
+}
+
+void main(void) {
+    vec3 p = vec3(gl_PointCoord - vec2(0.5, 0.5), 0.0) * 2.0;
+    vec3 d = vec3(0.0, 0.0, -1.0);
+    float nd = normZ.z; //dot(-normZ, d);
+    if(abs(nd) < 0.0001) discard;
+
+    float np = dot(normZ, p);
+    vec3 tp = p + d * np / nd;
+    vec2 coord = vec2(dot(normX, tp), dot(normY, tp));
+
+    //angle = 15 degree
+    const float flwrsn = 0.258819045102521;
+    const float flwrcs = 0.965925826289068;
+    mat2 flwrm = mat2(flwrcs, -flwrsn, flwrsn, flwrcs);
+    vec2 flwrp = vec2(abs(coord.x), coord.y) * flwrm;
+
+    float r;
+    if(flwrp.x < 0.0) {
+        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.36, 0.96) * 0.5);
+    }
+    else {
+        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.58, 0.96) * 0.5);
+    }
+
+    if(r > rstop) discard;
+
+    vec3 col = mix(vec3(1.0, 0.8, 0.75), vec3(1.0, 0.9, 0.87), r);
+    float grady = mix(0.0, 1.0, pow(coord.y * 0.5 + 0.5, 0.35));
+    col *= vec3(1.0, grady, grady);
+    col *= mix(0.8, 1.0, pow(abs(coord.x), 0.3));
+    col = col * diffuse + specular;
+
+    col = mix(fadeCol, col, distancefade);
+
+    float alpha = (rstop > 0.001)? (0.5 - r / (rstop * 2.0)) : 1.0;
+    alpha = smoothstep(0.0, 1.0, alpha) * palpha;
+
+    gl_FragColor = vec4(col * 0.5, alpha);
+}
+</script>
+<!-- effects -->
+<script id="fx_common_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+<script id="bg_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+
+uniform vec2 uTimes;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec3 col;
+    float c;
+    vec2 tmpv = texCoord * vec2(0.8, 1.0) - vec2(0.95, 1.0);
+    c = exp(-pow(length(tmpv) * 1.8, 2.0));
+    col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);
+    gl_FragColor = vec4(col * 0.5, 1.0);
+}
+</script>
+<script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec4 col = texture2D(uSrc, texCoord);
+    gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
+}
+</script>
+<script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+uniform vec4 uBlurDir; //dir(x, y), stride(z, w)
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec4 col = texture2D(uSrc, texCoord);
+    col = col + texture2D(uSrc, texCoord + uBlurDir.xy * uDelta);
+    col = col + texture2D(uSrc, texCoord - uBlurDir.xy * uDelta);
+    col = col + texture2D(uSrc, texCoord + (uBlurDir.xy + uBlurDir.zw) * uDelta);
+    col = col + texture2D(uSrc, texCoord - (uBlurDir.xy + uBlurDir.zw) * uDelta);
+    gl_FragColor = col / 5.0;
+}
+</script>
+<!-- effect fragment shader template -->
+<script id="fx_common_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    gl_FragColor = texture2D(uSrc, texCoord);
+}
+</script>
+<!-- post processing -->
+<script id="pp_final_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+<script id="pp_final_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+//precision mediump float;
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform sampler2D uBloom;
+uniform vec2 uDelta;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+    vec4 srccol = texture2D(uSrc, texCoord) * 2.0;
+    vec4 bloomcol = texture2D(uBloom, texCoord);
+    vec4 col;
+    col = srccol + bloomcol * (vec4(1.0) + srccol);
+    col *= smoothstep(1.0, 0.0, pow(length((texCoord - vec2(0.5)) * 2.0), 1.2) * 0.5);
+    col = pow(col, vec4(0.45454545454545)); //(1.0 / 2.2)
+
+    gl_FragColor = vec4(col.rgb, 1.0);
+    gl_FragColor.a = 1.0;
+}
+</script>
+
+  <script src="../js/flower.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+include ':app', ':TestAPP', ':DBHelper', ':ContentProvider', ':StaticBroadcastReceiver', ':Camera', ':SystemCamera', ':CustomCamera', ':smsQuery'

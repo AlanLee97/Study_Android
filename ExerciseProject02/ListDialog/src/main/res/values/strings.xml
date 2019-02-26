@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ListDialog</string>
+
+    <string-array name="font_text">
+        <item>小号</item>
+        <item>中号</item>
+        <item>大号</item>
+        <item>特大号</item>
+    </string-array>
+    <integer-array name="font_size">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+    </integer-array>
+</resources>
